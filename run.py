@@ -1,4 +1,20 @@
-sessions = []
+import json
+
+
+def save_sessions(sessions):
+    with open("sessions.json", "w") as file:
+        json.dump(sessions, file)
+
+
+def load_sessions():
+    try:
+        with open("sessions.json", "r") as file:
+            return json.load(file)
+    except FileNotFoundError:
+        return []
+
+
+sessions = load_sessions()
 
 
 def show_menu():
@@ -23,6 +39,7 @@ def main():
             }
 
             sessions.append(session)
+            save_sessions(sessions)
             print("Session added successfully!")
 
         elif choice == "2":
