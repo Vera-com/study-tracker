@@ -30,8 +30,22 @@ def main():
         choice = input("Choose an option: ")
 
         if choice == "1":
-            subject = input("Enter subject: ")
-            duration = input("Enter duration (minutes): ")
+
+            # SUBJECT VALIDATION
+            while True:
+                subject = input("Enter subject: ").strip()
+                if subject == "":
+                    print("Subject cannot be empty.")
+                else:
+                    break
+
+            # DURATION VALIDATION
+            while True:
+                duration = input("Enter duration (minutes): ").strip()
+                if not duration.isdigit():
+                    print("Please enter a valid number.")
+                else:
+                    break
 
             session = {
                 "subject": subject,
