@@ -1,9 +1,10 @@
 import json
+from datetime import datetime
 
 
 def save_sessions(sessions):
     with open("sessions.json", "w") as file:
-        json.dump(sessions, file)
+        json.dump(sessions, file, indent=4)
 
 
 def load_sessions():
@@ -46,7 +47,14 @@ def main():
                 else:
                     break
 
-            session = {"subject": subject, "duration": duration}
+            date = datetime.now().strftime("%Y-%m-%d")
+
+            session = {
+                "subject": subject,
+                "duration": int(duration),
+                "date": date
+            }
+
             sessions.append(session)
             save_sessions(sessions)
             print("Session added successfully!")
@@ -61,7 +69,8 @@ def main():
                     subject = session["subject"]
                     duration = int(session["duration"])
                     total_time += duration
-                    print(f"{i}. {subject} - {duration} mins")
+                    date = session.get("date", "N/A")
+                print(f"{i}. {subject} - {duration} mins ({date})")
 
                 print(f"\nTotal study time: {total_time} mins")
 
