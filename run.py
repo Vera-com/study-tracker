@@ -55,8 +55,15 @@ def main():
             if not sessions:
                 print("No sessions found.")
             else:
+                total_time = 0
+
                 for i, session in enumerate(sessions, start=1):
-                    print(f"{i}. {session['subject']} - {session['duration']} mins")
+                    subject = session["subject"]
+                    duration = int(session["duration"])
+                    total_time += duration
+                    print(f"{i}. {subject} - {duration} mins")
+
+                print(f"\nTotal study time: {total_time} mins")
 
         elif choice == "3":
             if not sessions:
