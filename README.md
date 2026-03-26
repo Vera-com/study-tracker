@@ -3,7 +3,9 @@
 ## 📌 Overview
 The Study Tracker is a command-line Python application that allows users to manage their study sessions. Users can add, view, update, and delete sessions, with data stored persistently in a JSON file.
 
-This project was created as part of my learning journey in Python and focuses on building a simple but functional study tracking system.
+This project was created as part of my learning journey in Python, with the goal of building a simple and functional study tracking system.
+
+It is designed for students or individuals who want a simple way to keep track of their study time.
 ---
 
 ## 🎯 Features
@@ -33,3 +35,10 @@ This project was created as part of my learning journey in Python and focuses on
 
 ```bash
 python3 run.py
+
+## 📌 Future Improvements
+
+- Add date tracking for sessions  
+- Allow filtering by subject  
+- Build a graphical user interface (GUI) version
+
